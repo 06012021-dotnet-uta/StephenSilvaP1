@@ -8,17 +8,17 @@ using WebStore.Models;
 
 namespace WebStore.Controllers
 {
-    public class CatagoryController : Controller
+    public class CustomerController : Controller
     {
         private readonly P1DBContext _db;
 
-        public CatagoryController(P1DBContext db)
+        public CustomerController(P1DBContext db)
         {
             _db = db;
         }
         public IActionResult Index()
         {
-            IEnumerable<Category> objList = _db.Category;
+            IEnumerable<Customer> objList = _db.Customer;
             return View(objList);
         }
         // GET CREATE
@@ -29,9 +29,9 @@ namespace WebStore.Controllers
         // POST - CREAT
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Category obj)
+        public IActionResult Create(Customer obj)
         {
-            _db.Category.Add(obj);
+            _db.Customer.Add(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
