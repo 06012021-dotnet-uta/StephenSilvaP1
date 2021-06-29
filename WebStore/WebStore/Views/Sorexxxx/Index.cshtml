@@ -1,13 +1,13 @@
-﻿@model IEnumerable<WebStore.Models.Category>
+﻿@model IEnumerable<WebStore.Models.Store>
 
 <div class="conntainner p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Category List</h2>
+            <h2 class="text-primary">Customer List</h2>
         </div>
         <div class="col-6 text-right">
-            <a asp-controller="Catagory" asp-action="Create" class="btn btn-primary">
-                Create New Category
+            <a asp-controller="Store" asp-action="Create" class="btn btn-primary">
+                Create New Store
             </a>
         </div>
     </div>
@@ -21,10 +21,10 @@
         <thead>
             <tr>
                 <th>
-                    Catagory Name
+                    Store Name
                 </th>
                 <th>
-                    Display Order
+                    Store City
                 </th>
             </tr>
 
@@ -33,8 +33,8 @@
             @foreach (var obj in Model)
             {
                 <tr>
-                    <td width="50%">@obj.Name</td>
-                    <td width="50%">@obj.DisplayOrder</td>
+                    <td width="50%">@obj.StoreName</td>
+                    <td width="50%">@obj.StoreCity</td>
                 </tr>
             }
         </tbody>
